@@ -69,7 +69,7 @@ Visualise the total number of steps taken per day as a barplot
     text(x = 0,y=median(total_day$total_steps),pos=3,labels = "median")
     text(x = 0,y=mean(total_day$total_steps),pos=1,labels = "mean",col="red")
     
-###Please find the image for the barplot in the image folder
+###Please find the image for the barplot in the Master section
 
 2.Make a histogram of the total number of steps taken each day
 
@@ -80,7 +80,7 @@ Histogram does not contain days where all observations are missing (i.e. there h
     abline(v=median(total_day$total_steps),lty=3, lwd=2, col="black")
     legend(legend="median","topright",lty=3,lwd=2,bty = "n")
     
-###Please find the image for the histogram in the image folder
+###Please find the image for the histogram in the Master section
 
 3.Calculate and report the mean and median of the total number of steps taken per day
 
@@ -103,7 +103,7 @@ Mean and median of the total number of steps taken per day are 1.076619 × 104 s
             at = seq_along(daily_patterns$interval)[seq(1,288,12)])
         
 
-###please find the dialyplot image in the image folder
+###please find the dialyplot image in the Master section
 
 2.Which 5-minute interval, on average across all the days in the dataset, contains the maximum number of steps?
 
@@ -171,7 +171,7 @@ Below code is just to verify if process of imputing missing values correctly pre
     abline(v=median(total_day$total_steps),lty=3, lwd=2, col="black")
     legend(legend="median","topright",lty=3,lwd=2,bty = "n")
     
-###Please find the histogram_no_NA image in the image folder 
+###Please find the histogram_no_NA image in the Master section 
 
 
     summary(total_day_noNAs$total_steps)
@@ -208,4 +208,4 @@ Imputing missing values, mean of the total number of steps taken per day increas
     daily_patterns <- activity_without_NAs %>% mutate(day=factor(day,levels=c("weekend","weekday")),steps_no_NAs=as.numeric(steps_no_NAs)) %>% group_by(interval,day) %>% summarise(average=mean(steps_no_NAs))
     qplot(interval,average,data=daily_patterns,geom="line",facets=day~.)
     
-###Please find the weekend comparison image in the image folder
+###Please find the weekend comparison image in the Master section
